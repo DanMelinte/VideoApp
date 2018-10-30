@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 
 var exphbs  = require('express-handlebars');
-var hbs = exphbs.create({ /* config */ });
-
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
@@ -21,10 +19,6 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('ABOUT');
 });
-
-app.use(function(req, res, next) {
-    req.name = "Nikita";
- })
 
 const port = 5002;
 
